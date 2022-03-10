@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const Amar = {
+  city: "Goa",
+  skill: "singer",
+  getSkill() {
+    console.log(this.skill);
+  },
+};
+
+
+const Akbar = {
+  city: "Mumbai",
+  skill: "chef",
+  getSkill() {
+    console.log(this.skill);
+  },
+};
+
+
+const Anthony = {
+  city: "Kashmir",
+  skill: "Magician",
+  getSkill() {
+    console.log(this.skill);
+  },
+};
+
+Amar.getSkill.call(Akbar); 
+Akbar.getSkill.call(Anthony);  
+Anthony.getSkill.call(Amar); 
+</script>

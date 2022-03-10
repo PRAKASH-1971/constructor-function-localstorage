@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #submit{
+            margin: 20px;
+            padding: 10px;
+            color: black;
+            background-color: orange;
+            border: none;
+        }
+        input{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Name" id="name">
+        <input type="number" placeholder="Enter Number" id="number">
+        <input type="text" placeholder="City" id="city">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
+<script>
+
+    document.querySelector("form").addEventListener("submit",sdata)
+    
+    
+    var arr = JSON.parse(localStorage.getItem("sarr")) || []
+    function sdata(event){
+       event.preventDefault();
+       var sname = document.getElementById("name").value
+       var snum = document.getElementById("number").value
+       var scity = document.getElementById("city").value
+           console.log(sname,snum,scity)
+       
+    function student(n,nu,c){
+    this.name = n
+    this.number = nu
+    this.city = c
+    }
+ 
+    var obj = new student(sname,snum,scity)
+    arr.push(obj)
+    console.log("arr",arr)
+    localStorage.setItem("sarr",JSON.stringify(arr))
+    const kb = JSON.parse(localStorage.getItem("sarr"))
+    console.log("kb",kb)
+    window.location.href = "/display.html"
+
+    }
+
+
+</script>

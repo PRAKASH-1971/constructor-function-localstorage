@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px 45px;
+        }
+        button{
+            margin: 20px;
+            padding: 10px;
+            color: black;
+            background-color: orange;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Student Number</th>
+                <th>Student City</th>
+              </tr>
+             </thead>
+             <tbody>
+                     <!-- Apppend here -->
+            </tbody>
+          </table>
+          <button onclick="window.location.href='/index.html'">Enter Student Data</button>
+    </div>
+</body>
+</html>
+<script>
+   var gdata = JSON.parse(localStorage.getItem("sarr"))
+   console.log(gdata)
+
+   gdata.map(function(data){
+       var ha = document.createElement("td")
+       ha.textContent = data.name
+       var hb = document.createElement("td")
+       hb.textContent = data.number
+       var hc = document.createElement("td")
+       hc.textContent = data.city
+       
+       var tr = document.createElement("tr")
+       
+  tr.append(ha,hb,hc)
+       document.querySelector("tbody").append(tr)
+   })
+
+
+</script>
